@@ -1,0 +1,16 @@
+
+<!-- nested for loop  -->
+<button >
+
+</button>
+<div *ngFor = "let category of categories">
+    <h3>{{category.name}}</h3>
+    <ul>
+        <li *ngFor = " let product of category.products ">
+            {{product}}
+        </li>
+    </ul>
+    <button click="submit()">submit</button>
+</div>
+
+

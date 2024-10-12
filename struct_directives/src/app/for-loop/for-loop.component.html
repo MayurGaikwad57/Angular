@@ -1,0 +1,48 @@
+<!-- <div *ngFor = "let flow of flowers; first as f">
+    <h3> The flower {{f}} :  {{flow}}</h3>  -->
+    <!-- // (first as f)     here first will give true other will be false
+    // (index as i) here we will get the index
+        (last as l) Here last element will be true
+        (odd as o) here odd element will be true     
+        (even as e) here even will be true                                -->
+<!-- </div> -->
+
+<div>
+<p *ngFor = " let details of userDetails;trackBy:refreshUser"> {{details.name}} </p>  
+<button (click)="refresh()">Refresh</button>
+</div>
+
+
+<!-- NOTE
+ 1) For loop of Angular is far more different than for loop of Javascript 
+ 2)Javascript for loop is used within the same file to display values 
+ 3)In Angular we display display the html elements that are associated with that for loops 
+-->
+
+
+<!-- // display menu bar 
+<div class="menu-cart">
+    <a *ngFor="let menu of createMenu"> {{menu}}</a>
+</div>
+
+<div>
+    <ul *ngFor=" let item of colors">
+        <li>{{item}}</li>
+    </ul>
+</div> -->
+
+
+<!-- trackBy Function Use -->
+<div class="container">
+    <ul>
+        <li *ngFor=" let item of list;trackBy:addUser">{{item.name}}</li>
+    </ul>
+    <button (click)="display()">Add User</button>
+</div>
+<!--1) Angular has reference of array of objects that we have created
+    2)when click event is initated angular will generate anothere reference for users array of objects and hence the entire view will be rendered again displaying all the elements 
+    3)when we get data from a server or api we want angular to load and display that added data with remaining data as it from the list
+    4)But for every api call when new data gets added angular will render the entire view which affects the performance in large scale applications
+    5)Large Scale Applications we want the view not to be rendered every time only the modifications made to the view should be displayed with our original view 
+    6)To Acheive this we use TrackBy in our Angular Applications for loop inscreasing performance of the for loop and our application
+      -->

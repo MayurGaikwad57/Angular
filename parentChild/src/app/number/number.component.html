@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+<!-- pass data from parent to child to display the random number  -->
+<div class="row">
+    <div class="col-lg-5">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" #name class="form-control"> 
+        <!-- Template reference varaibles gives us access to html elements methods,properties,attributes,element properties,element state information,html content-->
+    </div>
+    <div class="form-group">
+        <label for="mark">Mark</label>
+        <input type="text" #mark class="form-control" id="mark">
+    </div>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="transferData(name.value,mark.value)">Submit</button>
+<div>{{response}}</div>
+<!-- The child Component called here in parent component by mentioning its selector  -->
+<app-sub-number  [passdata]="data" [parameterPass]="newObj" (dataupdateevent)="updateTitle($event)"></app-sub-number>
+<!-- <button class="btn btn-primary" (click)="callData()">Submit</button> -->

@@ -1,0 +1,25 @@
+<!-- 
+<h1>The Name is {{parameterPass.name}}</h1>
+<h1>The mark is {{parameterPass.mark}}</h1>
+
+<h1>The random numbers are {{passdata}}</h1> -->
+
+
+<h1>Details</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mark</th>
+        </tr>
+    </thead>
+    <tbody *ngFor = " let value of listArray">
+        <td>{{value.name}}</td>
+        <td>{{value.mark}}</td>
+    </tbody>
+</table>
+
+<br>
+
+<input type="text" #name class="form-control">
+<a class="btn btn-primary" (click)="dataupdateevent.emit(name.value)">Submit</a>

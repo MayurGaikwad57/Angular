@@ -1,0 +1,25 @@
+<!-- // ----------------------------- Structural Directives ------------------------// -->
+ <!-- Conditional rendering using ngIf Directive -->
+<div *ngIf="isPresent; else Name ">
+    <h2>Hello , Mayur welcome</h2>
+</div>
+<ng-template #Name>
+    <!--<ng-template> acts a container for the other html elements that ngIf directive uses to properly add or remove the elements from the dom -->
+        <!-- Deferred Rendering: Content inside an <ng-template> tag is not rendered immediately. Instead, Angular stores the content in memory until it's explicitly rendered. -->
+            <!-- Dynamic Content: It can be used for dynamically inserting content at runtime using Angular’s ViewContainerRef or ngTemplateOutlet. -->
+    <h3>Hii, Else Block Executed </h3>
+</ng-template>
+<!-- Similarly we have a else block also  -->
+<div class="conatiner"></div>
+<div class="form">
+   <div class="form-group">
+    <label for="Name" class="form-label">Name:</label>
+    <input type="text" class="form-control" placeholder="Name" id="Name" [(ngModel)]="inputName">
+   </div>
+    <div>
+    <button (click)="onSubmit()">Submit</button>
+    </div>
+</div>
+<div *ngIf = "isRendered">
+    <p>The Name is {{inputName}}</p>
+</div>

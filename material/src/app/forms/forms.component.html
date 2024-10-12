@@ -1,0 +1,32 @@
+<!--  Menu in Material -->
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Cricket</button>
+    <button mat-menu-item [matMenuTriggerFor]="submenu2">Football</button>
+</mat-menu>
+<button [matMenuTriggerFor]="appMenu">Menu</button>
+<div>
+<mat-menu #subMenu>
+ <button>India</button>
+ <button>Australia</button>
+ <button>Newzeland</button>
+
+</mat-menu>
+</div>
+<mat-menu #submenu2>
+    <button>Argntina</button>
+    <button>Italy</button>
+    <button>Brazil</button>
+</mat-menu>
+
+<mat-menu #lazyMenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item> {{name}}  Hobby is {{hobby}}</button>
+    <button mat-menu-item >LogOut {{name}}</button>
+</ng-template>
+</mat-menu>
+<button [matMenuTriggerData]="{name:'Mayur',hobby:'Cricket'}"    [matMenuTriggerFor]="lazyMenu">Name1</button>
+<button [matMenuTriggerData]="{name:'Abhishek',hobby:'Football'}" [matMenuTriggerFor]="lazyMenu" >Name2</button>
+
+<!-- Angular dialog -->
+<button mat-raised-button (click)="openDialog()">click</button>
